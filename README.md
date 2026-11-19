@@ -47,14 +47,26 @@ The water temperature tile is color coded by temperature alone (no key is shown 
 
 | Color | Water temperature | Why this cut-off |
 |---|---|---|
-| neutral (no color) | 70 °F and above | Below 70 °F is the U.S. Coast Guard's general cold-water warning level. |
-| yellow | 60–69 °F | Cold water; cold shock is possible on sudden entry. Below 60 °F the Coast Guard requires its boat crews to wear protective suits. |
-| orange | 50–59 °F | Cold shock is strong (Tipton et al. 1998, https://doi.org/10.1007/s004210050416). |
-| red | below 50 °F | Cold shock is at its strongest around 50 °F (same study). The Coast Guard requires dry suits for its crews below 50 °F. |
+| neutral (no color) | 70 °F and above | Below 70 °F is the U.S. Coast Guard's general boating-safety warning level for cold water. This cut-off is not from the crew manual below. |
+| yellow | 60–69 °F | Cold water; cold shock is possible on sudden entry. Coast Guard boat crews still wear a work uniform and life jacket at these temperatures. |
+| orange | 50–59 °F | Cold shock is strong (Tipton et al. 1998, https://doi.org/10.1007/s004210050416). Coast Guard boat crews must wear anti-exposure coveralls or a dry suit. |
+| red | below 50 °F | Cold shock is at its strongest around 50 °F (same study). Coast Guard boat crews must wear a dry suit when the air is also below 50 °F; otherwise coveralls or a dry suit. |
 
 Most cold-water deaths come from cold shock (the first 1–3 minutes) and swimming failure rather than hypothermia (Leuci, Tipton et al. 2026, https://doi.org/10.1152/japplphysiol.00578.2026), which is why the bands use water temperature only.
 
-The Coast Guard crew-clothing thresholds come from secondary sources describing the Rescue and Survival Systems Manual; the manual itself could not be checked.
+### Coast Guard crew clothing rules
+
+From the Coast Guard *Rescue and Survival Systems Manual*, COMDTINST M10470.10G (September 2014, with Change 1 of May 2015), Part 2, Chapter 3, B.2, Tables 2-5 and 2-6 (page 2-19):
+
+| Water | Table 2-5 "50/50 Box" (units issued anti-exposure coveralls) | Table 2-6 "Flat 60 Box" (units without coveralls) |
+|---|---|---|
+| 60 °F and above | Work uniform and Type III life jacket, at any air temperature | Work uniform and Type III life jacket |
+| 50–59 °F | Anti-exposure coveralls | Dry suit with Layer I and II undergarments, Type III life jacket and neoprene hood |
+| below 50 °F | Anti-exposure coveralls if air is 50 °F or above; dry suit (as above) if air is also below 50 °F | Dry suit (as above) |
+
+Wind is not part of either table; the manual only requires wind speed to be recorded when a unit waives the requirement. Air temperature matters only below 50 °F water, to choose between coveralls and a dry suit. The 70 °F cut-off comes from the Coast Guard's general boating-safety advice, not from this manual.
+
+Newer editions of the manual were issued in 2020 (M10470.10H) and 2026 (10470.10I) and have not been checked; their tables may differ.
 
 Air temperature and wind speed and direction are shown as general information only. They are not color coded.
 
