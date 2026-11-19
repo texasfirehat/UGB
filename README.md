@@ -1,4 +1,4 @@
-# Upper Galveston Bay board
+# Upper Galveston Bay Tides board
 
 `index.html` is the whole board in one file. It needs no server code, accounts or API keys.
 
