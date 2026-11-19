@@ -13,6 +13,10 @@
 - Has about a year of tide predictions built in, so the tide readout still works if the internet drops.
 - Catches up straight away when a screen wakes from sleep or the network comes back.
 
+## QR code
+
+`qr/UGB-qr.png` (740 × 740 px) and `qr/UGB-qr.svg` (scalable, for print) open the live board at https://texasfirehat.github.io/UGB/. They use medium error correction, so they still scan when slightly scuffed.
+
 ## Hosting it (pick one)
 
 1. **Department web server or intranet.** Copy `index.html` into any folder the server already serves, and point the station screens at that address.
