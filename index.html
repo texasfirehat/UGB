@@ -38,6 +38,9 @@ h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.2vw,56px);l
 .sub{color:var(--muted);font-size:.95em}
 .clock{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.2vw,56px);font-variant-numeric:tabular-nums;line-height:1}
 .clock small{font-size:.45em;color:var(--muted);font-weight:500;margin-left:6px}
+.hright{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px clamp(16px,2.4vw,40px)}
+.sun{display:flex;flex-wrap:wrap;gap:4px clamp(12px,1.6vw,24px);font-family:var(--display);font-weight:600;font-size:clamp(20px,1.9vw,34px);font-variant-numeric:tabular-nums;line-height:1}
+.sun .sl{font-family:var(--body);font-size:.5em;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-right:4px}
 .top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.4vw,20px)}
 .wx{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--rule);background:var(--panel);border-radius:8px;overflow:hidden}
 .wx>div{padding:clamp(12px,1.4vw,22px);min-width:0;border-right:1px solid var(--rule)}
@@ -119,7 +122,10 @@ footer a{color:inherit}
       <h1>Upper Galveston Bay</h1>
       <div class="sub">Morgans Point, Barbours Cut · NOAA station 8770613 · Houston Ship Channel · heights in feet above MLLW</div>
     </div>
-    <div class="clock" id="clock">--:--<small>CT</small></div>
+    <div class="hright">
+      <div class="sun"><span><span class="sl">Sunrise</span> <span id="sunRise">–</span></span><span><span class="sl">Sunset</span> <span id="sunSet">–</span></span></div>
+      <div class="clock" id="clock">--:--<small>CT</small></div>
+    </div>
   </header>
 
   <div id="banner" class="banner" hidden></div>
@@ -156,7 +162,6 @@ footer a{color:inherit}
     <div class="obs-side">
       <dl>
         <dt id="predThenL">Predicted for the reading time</dt><dd id="predThen">–</dd>
-        <dt>Sunrise / sunset</dt><dd id="sunVal">–</dd>
       </dl>
       <div class="meta" id="fresh">&nbsp;</div>
     </div>
@@ -306,7 +311,7 @@ function render(){
     $("deltaE").textContent=a<0.25?"Water is tracking the forecast":`If it holds, water now ≈ ${ft(h+off)} ft`;
   } else {$("obsH").textContent="–";$("obsWhen").textContent="The gauge did not report at the last refresh";$("deltaV").textContent="–";$("deltaL").textContent="No reading"}
   renderWx();
-  const s=sunTimes(nowMs); $("sunVal").textContent=`${fmtTime.format(t2ms(s.rise))} / ${fmtTime.format(t2ms(s.set))}`;
+  const s=sunTimes(nowMs); $("sunRise").textContent=fmtTime.format(t2ms(s.rise)); $("sunSet").textContent=fmtTime.format(t2ms(s.set));
   const age=now-D.built, stale=age>30;
   $("fresh").innerHTML=`<span class="chip ${stale?"warn":"ok"}">${stale?"Stale":"Current"}</span> Gauge data updated ${fmtStamp.format(t2ms(D.built))} · refreshes every 6 min`;
 
