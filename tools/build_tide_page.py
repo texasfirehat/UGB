@@ -222,8 +222,8 @@ footer a{color:inherit}
       <div class="sub">Morgans Point, Barbours Cut · NOAA station 8770613 · Houston Ship Channel · heights in feet above MLLW</div>
     </div>
     <div class="hright">
-      <div class="sun"><span><span class="sl">Sunrise</span> <span id="sunRise">–</span></span><span><span class="sl">Sunset</span> <span id="sunSet">–</span></span></div>
       <div class="clock" id="clock">--:--<small>CT</small></div>
+      <div class="sun"><span><span class="sl">Sunrise</span> <span id="sunRise">–</span></span><span><span class="sl">Sunset</span> <span id="sunSet">–</span></span></div>
     </div>
   </header>
 
@@ -410,7 +410,7 @@ function render(){
     $("deltaE").textContent=a<0.25?"Water is tracking the forecast":`If it holds, water now ≈ ${ft(h+off)} ft`;
   } else {$("obsH").textContent="–";$("obsWhen").textContent="The gauge did not report at the last refresh";$("deltaV").textContent="–";$("deltaL").textContent="No reading"}
   renderWx();
-  const s=sunTimes(nowMs); $("sunRise").textContent=fmtTime.format(t2ms(s.rise)); $("sunSet").textContent=fmtTime.format(t2ms(s.set));
+  const s=sunTimes(nowMs); $("sunRise").textContent=fmtClock.format(t2ms(s.rise)); $("sunSet").textContent=fmtClock.format(t2ms(s.set));
   const age=now-D.built, stale=age>13*60;
   $("fresh").innerHTML=`<span class="chip ${stale?"warn":"ok"}">${stale?"Stale":"Current"}</span> Gauge data refreshed ${fmtStamp.format(t2ms(D.built))} · updates 0600 and 1800`;
 
