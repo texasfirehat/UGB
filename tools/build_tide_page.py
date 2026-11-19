@@ -105,7 +105,7 @@ def main(out):
     print(f"wrote {out}: {len(hourly)} hourly, {len(hilo)} hi/lo, {len(obs)} obs, wind={'yes' if wind else 'no'}, alerts={len(alerts) if alerts_at else 'unavailable'}, water temp={temps.get('wt',{}).get('v')}, air temp={temps.get('at',{}).get('v')}")
 
 
-TEMPLATE = r"""<title>Upper Galveston Bay</title>
+TEMPLATE = r"""<title>Upper Galveston Bay Tides</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -218,7 +218,7 @@ footer a{color:inherit}
 <div class="wrap">
   <header>
     <div>
-      <h1>Upper Galveston Bay</h1>
+      <h1>Upper Galveston Bay Tides</h1>
       <div class="sub">Morgans Point, Barbours Cut · NOAA station 8770613 · Houston Ship Channel · heights in feet above MLLW</div>
     </div>
     <div class="hright">
