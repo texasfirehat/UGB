@@ -309,12 +309,12 @@ footer a{color:inherit}
 const D = /*__DATA__*/null;
 const TZ = "America/Chicago", LAT = 29.6817, LON = -94.985;
 const MIN = 60000;
-const fmtTime = new Intl.DateTimeFormat("en-US",{timeZone:TZ,hour:"numeric",minute:"2-digit"});
-const fmtClock = new Intl.DateTimeFormat("en-US",{timeZone:TZ,hour:"2-digit",minute:"2-digit",hour12:false});
+const fmtTime = new Intl.DateTimeFormat("en-US",{timeZone:TZ,hour:"2-digit",minute:"2-digit",hourCycle:"h23"});
+const fmtClock = new Intl.DateTimeFormat("en-US",{timeZone:TZ,hour:"2-digit",minute:"2-digit",hourCycle:"h23"});
 const fmtDay = new Intl.DateTimeFormat("en-US",{timeZone:TZ,weekday:"short",month:"short",day:"numeric"});
 const fmtDayKey = new Intl.DateTimeFormat("en-CA",{timeZone:TZ,year:"numeric",month:"2-digit",day:"2-digit"});
-const fmtHour = new Intl.DateTimeFormat("en-US",{timeZone:TZ,hour:"numeric"});
-const fmtStamp = new Intl.DateTimeFormat("en-US",{timeZone:TZ,weekday:"short",hour:"numeric",minute:"2-digit"});
+const fmtHour = new Intl.DateTimeFormat("en-US",{timeZone:TZ,hour:"2-digit",minute:"2-digit",hourCycle:"h23"});
+const fmtStamp = new Intl.DateTimeFormat("en-US",{timeZone:TZ,weekday:"short",hour:"2-digit",minute:"2-digit",hourCycle:"h23"});
 const $ = id => document.getElementById(id);
 const ft = v => v.toFixed(1);
 const t2ms = m => m*MIN;
@@ -344,7 +344,7 @@ function sunTimes(ms){
 
 // National Weather Service alerts for Galveston Bay (GMZ335), Coastal Harris (TXZ313) and Chambers (TXZ214).
 // Warnings red, watches orange, advisories yellow; other statements neutral. Older than 30 min = status unknown.
-const fmtAlert = new Intl.DateTimeFormat("en-US",{timeZone:TZ,weekday:"short",hour:"numeric",minute:"2-digit"});
+const fmtAlert = new Intl.DateTimeFormat("en-US",{timeZone:TZ,weekday:"short",hour:"2-digit",minute:"2-digit",hourCycle:"h23"});
 function alertLevel(ev){ ev=(ev||"").toLowerCase(); return ev.includes("warning")?"warning":ev.includes("watch")?"watch":ev.includes("advisory")?"advisory":"other"; }
 function renderAlerts(nowMs){
   const box=$("alerts"), at=D.alertsAt, rank={warning:0,watch:1,advisory:2,other:3};
